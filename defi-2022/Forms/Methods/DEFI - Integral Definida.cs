@@ -7,8 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.JScript;
-using Microsoft.JScript.Vsa;
 
 namespace defi_2022.Forms
 {
@@ -27,11 +25,6 @@ namespace defi_2022.Forms
         private void DEFI_Integral_Definida_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCalculate_Click(object sender, EventArgs e)
-        {
-            
         }
 
         // Functions
