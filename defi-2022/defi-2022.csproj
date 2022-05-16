@@ -134,6 +134,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -163,6 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Forms\External\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\integral.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dx.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
