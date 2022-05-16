@@ -66,6 +66,7 @@ namespace defi_2022.Forms
             this.lblMODE = new System.Windows.Forms.Label();
             this.lblA = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.picGraphic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.gbTipoResult.SuspendLayout();
@@ -82,6 +83,7 @@ namespace defi_2022.Forms
             this.gbValues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).BeginInit();
             this.SuspendLayout();
             // 
             // ttipTxtBox
@@ -351,7 +353,7 @@ namespace defi_2022.Forms
             this.pagePasos.Padding = new System.Windows.Forms.Padding(3);
             this.pagePasos.Size = new System.Drawing.Size(677, 158);
             this.pagePasos.TabIndex = 0;
-            this.pagePasos.Text = "Pasos";
+            this.pagePasos.Text = "Pasos y Solución";
             this.pagePasos.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
@@ -379,6 +381,7 @@ namespace defi_2022.Forms
             this.picPaso3.Location = new System.Drawing.Point(3, 79);
             this.picPaso3.Name = "picPaso3";
             this.picPaso3.Size = new System.Drawing.Size(329, 70);
+            this.picPaso3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPaso3.TabIndex = 35;
             this.picPaso3.TabStop = false;
             // 
@@ -388,6 +391,7 @@ namespace defi_2022.Forms
             this.picPaso4.Location = new System.Drawing.Point(338, 79);
             this.picPaso4.Name = "picPaso4";
             this.picPaso4.Size = new System.Drawing.Size(330, 70);
+            this.picPaso4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPaso4.TabIndex = 34;
             this.picPaso4.TabStop = false;
             // 
@@ -397,6 +401,7 @@ namespace defi_2022.Forms
             this.picPaso1.Location = new System.Drawing.Point(3, 3);
             this.picPaso1.Name = "picPaso1";
             this.picPaso1.Size = new System.Drawing.Size(329, 70);
+            this.picPaso1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPaso1.TabIndex = 33;
             this.picPaso1.TabStop = false;
             // 
@@ -406,6 +411,7 @@ namespace defi_2022.Forms
             this.picPaso2.Location = new System.Drawing.Point(338, 3);
             this.picPaso2.Name = "picPaso2";
             this.picPaso2.Size = new System.Drawing.Size(330, 70);
+            this.picPaso2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picPaso2.TabIndex = 36;
             this.picPaso2.TabStop = false;
             // 
@@ -413,12 +419,13 @@ namespace defi_2022.Forms
             // 
             this.pageGraphic.BackColor = System.Drawing.Color.Transparent;
             this.pageGraphic.Controls.Add(this.button1);
+            this.pageGraphic.Controls.Add(this.picGraphic);
             this.pageGraphic.Location = new System.Drawing.Point(4, 27);
             this.pageGraphic.Name = "pageGraphic";
             this.pageGraphic.Padding = new System.Windows.Forms.Padding(3);
             this.pageGraphic.Size = new System.Drawing.Size(677, 158);
             this.pageGraphic.TabIndex = 1;
-            this.pageGraphic.Text = "Gráfica";
+            this.pageGraphic.Text = "Gráficaᴮᴱᵀᴬ";
             this.pageGraphic.UseVisualStyleBackColor = true;
             // 
             // gbResult
@@ -521,6 +528,15 @@ namespace defi_2022.Forms
             this.label1.TabIndex = 32;
             this.label1.Text = "A =";
             // 
+            // picGraphic
+            // 
+            this.picGraphic.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picGraphic.Location = new System.Drawing.Point(3, 3);
+            this.picGraphic.Name = "picGraphic";
+            this.picGraphic.Size = new System.Drawing.Size(671, 152);
+            this.picGraphic.TabIndex = 34;
+            this.picGraphic.TabStop = false;
+            // 
             // DEFI_Integral_Definida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -556,6 +572,7 @@ namespace defi_2022.Forms
             this.gbValues.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,5 +615,6 @@ namespace defi_2022.Forms
         private System.Windows.Forms.Label lblMODE;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.PictureBox picGraphic;
     }
 }

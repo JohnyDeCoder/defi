@@ -1,4 +1,5 @@
-﻿using System;
+﻿using defi_2022.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AngouriMath;
-using defi_2022.Classes;
+using System.IO;
 
 namespace defi_2022.Forms
 {
@@ -30,7 +31,10 @@ namespace defi_2022.Forms
 
         private void DEFI_Integral_Definida_Load(object sender, EventArgs e)
         {
-
+            if (!Directory.Exists("Equations"))
+            {
+                Directory.CreateDirectory("Equations");
+            }
         }
 
         // Functions
