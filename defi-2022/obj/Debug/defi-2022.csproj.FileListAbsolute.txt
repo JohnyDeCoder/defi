@@ -8,3 +8,8 @@ D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\Git
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.csproj.CoreCompileInputs.cache
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.exe
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.pdb
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\bin\Debug\FontAwesome.Sharp.dll
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.csproj.CopyComplete
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\Interop.MSScriptControl.dll
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.csproj.ResolveComReference.cache
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi_2022.Forms.DEFI_Integral_Definida.resources
