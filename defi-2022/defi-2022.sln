@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "defi-2022", "defi-2022.csproj", "{D486E6E2-15E5-4375-8BA4-FE854C6FDD53}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "defi-2022", "defi-2022.csproj", "{C6952F75-CF8E-4766-8CEC-86EF40618521}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D486E6E2-15E5-4375-8BA4-FE854C6FDD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D486E6E2-15E5-4375-8BA4-FE854C6FDD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D486E6E2-15E5-4375-8BA4-FE854C6FDD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D486E6E2-15E5-4375-8BA4-FE854C6FDD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6952F75-CF8E-4766-8CEC-86EF40618521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6952F75-CF8E-4766-8CEC-86EF40618521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6952F75-CF8E-4766-8CEC-86EF40618521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6952F75-CF8E-4766-8CEC-86EF40618521}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {E6A10D64-3379-4487-93FB-A24E14EF5C15}
+		SolutionGuid = {CE0CF020-006B-42B8-A4F8-63247A3DD2FA}
 	EndGlobalSection
 EndGlobal

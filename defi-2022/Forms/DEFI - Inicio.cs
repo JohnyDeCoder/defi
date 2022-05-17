@@ -2,14 +2,8 @@
 using defi_2022.Forms;
 using FontAwesome.Sharp;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace defi_2022
@@ -167,7 +161,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            Reset();
+            //Reset();
         }
 
         private void btnRedTheme_Click(object sender, EventArgs e)
@@ -208,7 +202,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            Reset();
+            //Reset();
         }
 
         private void btnGreenTheme_Click(object sender, EventArgs e)
@@ -249,7 +243,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            Reset();
+            //Reset();
         }
 
         private void btnPurpleTheme_Click(object sender, EventArgs e)
@@ -290,7 +284,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            Reset();
+            //Reset();
         }
 
         private void btnTags_Click(object sender, EventArgs e)
