@@ -15,7 +15,6 @@ namespace defi_2022.Forms
         public bool txtContains; // Variable utilizada para saber si hay algún TextBox únicamente con - o .
         private string currentForm; // Variable utilizada para guardar el Name del formulario padre
         public bool error; // Variable utilizada para detectar un error
-        public int counter;
 
         public DEFI_Integral_Definida(string currentTheme)
         {
@@ -26,21 +25,18 @@ namespace defi_2022.Forms
 
         private void DEFI_Integral_Definida_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists("Equations"))
-            {
-                Directory.CreateDirectory("Equations");
-            }
+            
         }
 
         // Controls
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
-            int round;
-            double a, b;
-
+            int round, counter;
+            double a, b, evalDouble;
             string expression = txtFX.Text;
-            double evalDouble = 0;
+
+            counter = Properties.Settings.Default.Counter;
 
             a = double.Parse(txtA.Text);
             b = double.Parse(txtB.Text);
@@ -67,16 +63,16 @@ namespace defi_2022.Forms
                     break;
             }
 
-            // Escribir la fórmula sin integrar
+            // Escribe la fórmula sin integrar
 
-            picPaso1.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}(" + expression.Latexise() + ") dx =", counter++));
+            picPaso1.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}\\left[" + expression.Latexise() + "\\right] dx", counter++));
 
             var integral = expression.Integrate("x");
             integral = integral.Simplify(); // Simplificar expresiones complicadas
 
-            // Escribir la fórmula integrada y simplificada
+            // Escribe la fórmula integrada ya simplificada
 
-            picPaso2.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}(" + integral.Latexise() + ")|_{" + a + "}^{" + b + "} =", counter++));
+            picPaso2.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}\\left[" + integral.Latexise() + "\\right] \\vert_{" + a + "}^{" + b + "}", counter++));
 
             string integralPartA = integral.ToString();
             string integralPartB = integral.ToString();
@@ -131,15 +127,16 @@ namespace defi_2022.Forms
                     break;
             }
 
-            // Entre corchetes
+            // Resta del límite inferior con el superior
 
-            picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("[" + integralPartA.Latexise() + "] - [" + integralPartB.Latexise() + "] =", counter++));
+            picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("\\left[" + integralPartB.Latexise() + "\\right] - \\left[" + integralPartA.Latexise() + "\\right]", counter++));
 
-            evalDouble = (double)(integralPartA.EvalNumerical() - integralPartB.EvalNumerical());
+            evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical() );
 
-            // Resultado
+            // Resultado final en unidades cuadradas
 
-            picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}(" + expression.Latexise() + ") dx = " + evalDouble.ToString().Latexise(), counter++));
+            picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+            picResult.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}\\left[" + integral.Latexise() + "\\right] \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
 
             try
             {
@@ -416,6 +413,11 @@ namespace defi_2022.Forms
                     txtContains = true;
                 }
             }
+        }
+
+        private void DEFI_Integral_Definida_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

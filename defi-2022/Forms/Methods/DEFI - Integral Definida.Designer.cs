@@ -52,7 +52,6 @@ namespace defi_2022.Forms
             this.gbOptions = new System.Windows.Forms.GroupBox();
             this.gbTipoResult = new System.Windows.Forms.GroupBox();
             this.gbResult = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.picResult = new System.Windows.Forms.PictureBox();
             this.gbValues = new System.Windows.Forms.GroupBox();
             this.lblA = new System.Windows.Forms.Label();
@@ -72,11 +71,20 @@ namespace defi_2022.Forms
             this.picPaso2 = new System.Windows.Forms.PictureBox();
             this.pageGraphic = new System.Windows.Forms.TabPage();
             this.picGraphic = new System.Windows.Forms.PictureBox();
+            this.gbScale = new System.Windows.Forms.GroupBox();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label1 = new System.Windows.Forms.Label();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.gbTipoResult.SuspendLayout();
             this.gbResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
             this.gbValues.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picDX)).BeginInit();
@@ -90,6 +98,8 @@ namespace defi_2022.Forms
             ((System.ComponentModel.ISupportInitialize)(this.picPaso2)).BeginInit();
             this.pageGraphic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).BeginInit();
+            this.gbScale.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // ttipTxtBox
@@ -129,7 +139,7 @@ namespace defi_2022.Forms
             this.txtFX.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtFX.Size = new System.Drawing.Size(347, 36);
             this.txtFX.TabIndex = 0;
-            this.txtFX.Text = "x^2";
+            this.txtFX.Text = "x^3+1";
             this.ttipTxtBox.SetToolTip(this.txtFX, "• Escriba la fórmula\r\n\r\n• Ejemplos:\r\n   • x^3-x-1\r\n   • (ℯ^x+1)/(√(x))\r\n   • (ℯ^x" +
         "^-x)/(ℯ^x^x^x)\r\n   • 1/2 + sin(π / 4) + (sin(3x)2 + cos(3x)2)\r\n");
             this.txtFX.TextChanged += new System.EventHandler(this.txtFX_TextChanged);
@@ -143,7 +153,7 @@ namespace defi_2022.Forms
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(40, 36);
             this.txtB.TabIndex = 4;
-            this.txtB.Text = "1";
+            this.txtB.Text = "3";
             this.txtB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ttipTxtBox.SetToolTip(this.txtB, "• Escriba el intérvalo b  → [a, b].\r\n\r\n• Información:\r\n   Recuerde que los valore" +
         "s del intérvalo\r\n   deben ser de distintos signos.");
@@ -157,7 +167,7 @@ namespace defi_2022.Forms
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(40, 36);
             this.txtA.TabIndex = 5;
-            this.txtA.Text = "0";
+            this.txtA.Text = "1";
             this.txtA.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ttipTxtBox.SetToolTip(this.txtA, "• Escriba el intérvalo b  → [a, b].\r\n\r\n• Información:\r\n   Recuerde que los valore" +
         "s del intérvalo\r\n   deben ser de distintos signos.");
@@ -215,11 +225,11 @@ namespace defi_2022.Forms
             // 
             this.btnSigns.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSigns.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSigns.Location = new System.Drawing.Point(420, 20);
+            this.btnSigns.Location = new System.Drawing.Point(368, 20);
             this.btnSigns.Name = "btnSigns";
-            this.btnSigns.Size = new System.Drawing.Size(74, 36);
+            this.btnSigns.Size = new System.Drawing.Size(126, 36);
             this.btnSigns.TabIndex = 3;
-            this.btnSigns.Text = "Signos";
+            this.btnSigns.Text = "Mapa de Signos";
             this.ttipBtn.SetToolTip(this.btnSigns, resources.GetString("btnSigns.ToolTip"));
             this.btnSigns.UseVisualStyleBackColor = true;
             // 
@@ -227,7 +237,7 @@ namespace defi_2022.Forms
             // 
             this.btnEuler.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEuler.Font = new System.Drawing.Font("Trebuchet MS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEuler.Location = new System.Drawing.Point(346, 20);
+            this.btnEuler.Location = new System.Drawing.Point(294, 19);
             this.btnEuler.Name = "btnEuler";
             this.btnEuler.Padding = new System.Windows.Forms.Padding(3, 0, 0, 4);
             this.btnEuler.Size = new System.Drawing.Size(32, 37);
@@ -241,7 +251,7 @@ namespace defi_2022.Forms
             // 
             this.btnPow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnPow.Font = new System.Drawing.Font("Trebuchet MS", 20.25F);
-            this.btnPow.Location = new System.Drawing.Point(384, 21);
+            this.btnPow.Location = new System.Drawing.Point(332, 20);
             this.btnPow.Name = "btnPow";
             this.btnPow.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.btnPow.Size = new System.Drawing.Size(30, 36);
@@ -356,31 +366,22 @@ namespace defi_2022.Forms
             // 
             this.gbResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbResult.Controls.Add(this.pictureBox2);
             this.gbResult.Controls.Add(this.picResult);
             this.gbResult.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbResult.Location = new System.Drawing.Point(6, 218);
+            this.gbResult.Location = new System.Drawing.Point(6, 213);
             this.gbResult.Name = "gbResult";
-            this.gbResult.Size = new System.Drawing.Size(488, 89);
+            this.gbResult.Size = new System.Drawing.Size(243, 94);
             this.gbResult.TabIndex = 16;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Resultado";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(482, 70);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            // 
             // picResult
             // 
-            this.picResult.Location = new System.Drawing.Point(6, 19);
+            this.picResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picResult.Location = new System.Drawing.Point(3, 16);
             this.picResult.Name = "picResult";
-            this.picResult.Size = new System.Drawing.Size(476, 64);
+            this.picResult.Size = new System.Drawing.Size(237, 75);
+            this.picResult.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picResult.TabIndex = 0;
             this.picResult.TabStop = false;
             // 
@@ -388,6 +389,7 @@ namespace defi_2022.Forms
             // 
             this.gbValues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbValues.Controls.Add(this.gbScale);
             this.gbValues.Controls.Add(this.lblA);
             this.gbValues.Controls.Add(this.lblB);
             this.gbValues.Controls.Add(this.lblMODE);
@@ -599,20 +601,177 @@ namespace defi_2022.Forms
             this.picGraphic.TabIndex = 34;
             this.picGraphic.TabStop = false;
             // 
+            // gbScale
+            // 
+            this.gbScale.Controls.Add(this.iconButton3);
+            this.gbScale.Controls.Add(this.iconButton2);
+            this.gbScale.Controls.Add(this.label1);
+            this.gbScale.Controls.Add(this.numericUpDown1);
+            this.gbScale.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbScale.Location = new System.Drawing.Point(255, 213);
+            this.gbScale.Name = "gbScale";
+            this.gbScale.Size = new System.Drawing.Size(240, 95);
+            this.gbScale.TabIndex = 29;
+            this.gbScale.TabStop = false;
+            this.gbScale.Text = "Opciones de Imagen";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.numericUpDown1.AutoSize = true;
+            this.numericUpDown1.Enabled = false;
+            this.numericUpDown1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(166, 16);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(67, 26);
+            this.numericUpDown1.TabIndex = 34;
+            this.ttipTxtBox.SetToolTip(this.numericUpDown1, resources.GetString("numericUpDown1.ToolTip"));
+            this.numericUpDown1.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 20);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Escala de Imagen =";
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(552, 354);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(141, 30);
+            this.iconButton1.TabIndex = 34;
+            this.iconButton1.Text = "Abrir imágenes";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            // 
+            // iconButton2
+            // 
+            this.iconButton2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton2.IconSize = 20;
+            this.iconButton2.Location = new System.Drawing.Point(10, 51);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Size = new System.Drawing.Size(81, 30);
+            this.iconButton2.TabIndex = 35;
+            this.iconButton2.Text = "Aplicar";
+            this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // iconButton3
+            // 
+            this.iconButton3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.Undo;
+            this.iconButton3.IconColor = System.Drawing.Color.Black;
+            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton3.IconSize = 20;
+            this.iconButton3.Location = new System.Drawing.Point(97, 51);
+            this.iconButton3.Name = "iconButton3";
+            this.iconButton3.Size = new System.Drawing.Size(136, 30);
+            this.iconButton3.TabIndex = 36;
+            this.iconButton3.Text = "Restablecer";
+            this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton3.UseVisualStyleBackColor = true;
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.iconButton4.IconColor = System.Drawing.Color.Black;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 25;
+            this.iconButton4.Location = new System.Drawing.Point(24, 417);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(50, 41);
+            this.iconButton4.TabIndex = 38;
+            this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton4.UseVisualStyleBackColor = true;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 25;
+            this.iconButton5.Location = new System.Drawing.Point(359, 417);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(50, 41);
+            this.iconButton5.TabIndex = 39;
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // iconButton6
+            // 
+            this.iconButton6.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.iconButton6.IconColor = System.Drawing.Color.Black;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 25;
+            this.iconButton6.Location = new System.Drawing.Point(359, 493);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(50, 41);
+            this.iconButton6.TabIndex = 40;
+            this.iconButton6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton6.UseVisualStyleBackColor = true;
+            // 
+            // iconButton7
+            // 
+            this.iconButton7.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton7.IconSize = 25;
+            this.iconButton7.Location = new System.Drawing.Point(24, 493);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Size = new System.Drawing.Size(50, 41);
+            this.iconButton7.TabIndex = 41;
+            this.iconButton7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton7.UseVisualStyleBackColor = true;
+            // 
             // DEFI_Integral_Definida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 561);
-            this.Controls.Add(this.tabControlSolutions);
+            this.Controls.Add(this.iconButton7);
+            this.Controls.Add(this.iconButton6);
+            this.Controls.Add(this.iconButton5);
+            this.Controls.Add(this.iconButton4);
+            this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.lblMethodName);
             this.Controls.Add(this.gbValues);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.gbOptions);
             this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.tabControlSolutions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DEFI_Integral_Definida";
             this.Text = "DEFI - Integral Definida";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DEFI_Integral_Definida_FormClosing);
             this.Load += new System.EventHandler(this.DEFI_Integral_Definida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).EndInit();
             this.gbOptions.ResumeLayout(false);
@@ -620,7 +779,6 @@ namespace defi_2022.Forms
             this.gbTipoResult.ResumeLayout(false);
             this.gbTipoResult.PerformLayout();
             this.gbResult.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
             this.gbValues.ResumeLayout(false);
             this.gbValues.PerformLayout();
@@ -637,6 +795,9 @@ namespace defi_2022.Forms
             this.pageGraphic.ResumeLayout(false);
             this.pageGraphic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).EndInit();
+            this.gbScale.ResumeLayout(false);
+            this.gbScale.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,6 +845,15 @@ namespace defi_2022.Forms
         private System.Windows.Forms.TabPage pageGraphic;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picGraphic;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.GroupBox gbScale;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private FontAwesome.Sharp.IconButton iconButton6;
+        private FontAwesome.Sharp.IconButton iconButton7;
     }
 }
