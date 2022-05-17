@@ -36,13 +36,14 @@ namespace defi_2022.Forms
             this.txtFX = new System.Windows.Forms.TextBox();
             this.txtB = new System.Windows.Forms.TextBox();
             this.txtA = new System.Windows.Forms.TextBox();
+            this.lblMODE = new System.Windows.Forms.Label();
             this.ttipBtn = new System.Windows.Forms.ToolTip(this.components);
             this.btnReset = new System.Windows.Forms.Button();
             this.btnCalculate = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.btnSigns = new System.Windows.Forms.Button();
             this.btnEuler = new System.Windows.Forms.Button();
             this.btnPow = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.ttipOptions = new System.Windows.Forms.ToolTip(this.components);
             this.rbRedondear = new System.Windows.Forms.RadioButton();
             this.rbNormal = new System.Windows.Forms.RadioButton();
@@ -50,39 +51,44 @@ namespace defi_2022.Forms
             this.lblMethodName = new System.Windows.Forms.Label();
             this.gbOptions = new System.Windows.Forms.GroupBox();
             this.gbTipoResult = new System.Windows.Forms.GroupBox();
+            this.gbResult = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picResult = new System.Windows.Forms.PictureBox();
+            this.gbValues = new System.Windows.Forms.GroupBox();
+            this.lblA = new System.Windows.Forms.Label();
+            this.lblB = new System.Windows.Forms.Label();
+            this.picDX = new System.Windows.Forms.PictureBox();
+            this.picIntegral = new System.Windows.Forms.PictureBox();
             this.tabControlSolutions = new System.Windows.Forms.TabControl();
             this.pagePasos = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblPaso4 = new System.Windows.Forms.Label();
+            this.lblPaso3 = new System.Windows.Forms.Label();
+            this.lblPaso2 = new System.Windows.Forms.Label();
+            this.lblPaso1 = new System.Windows.Forms.Label();
+            this.tblpanelPasos = new System.Windows.Forms.TableLayoutPanel();
             this.picPaso3 = new System.Windows.Forms.PictureBox();
             this.picPaso4 = new System.Windows.Forms.PictureBox();
             this.picPaso1 = new System.Windows.Forms.PictureBox();
             this.picPaso2 = new System.Windows.Forms.PictureBox();
             this.pageGraphic = new System.Windows.Forms.TabPage();
-            this.gbResult = new System.Windows.Forms.GroupBox();
-            this.picResult = new System.Windows.Forms.PictureBox();
-            this.gbValues = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picIntegral = new System.Windows.Forms.PictureBox();
-            this.lblMODE = new System.Windows.Forms.Label();
-            this.lblA = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.picGraphic = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.gbTipoResult.SuspendLayout();
+            this.gbResult.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
+            this.gbValues.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).BeginInit();
             this.tabControlSolutions.SuspendLayout();
             this.pagePasos.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tblpanelPasos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso2)).BeginInit();
             this.pageGraphic.SuspendLayout();
-            this.gbResult.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picResult)).BeginInit();
-            this.gbValues.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -156,6 +162,19 @@ namespace defi_2022.Forms
             this.ttipTxtBox.SetToolTip(this.txtA, "• Escriba el intérvalo b  → [a, b].\r\n\r\n• Información:\r\n   Recuerde que los valore" +
         "s del intérvalo\r\n   deben ser de distintos signos.");
             // 
+            // lblMODE
+            // 
+            this.lblMODE.AutoSize = true;
+            this.lblMODE.BackColor = System.Drawing.Color.Transparent;
+            this.lblMODE.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMODE.Location = new System.Drawing.Point(104, 82);
+            this.lblMODE.Name = "lblMODE";
+            this.lblMODE.Size = new System.Drawing.Size(51, 16);
+            this.lblMODE.TabIndex = 30;
+            this.lblMODE.Text = "GRADOS";
+            this.ttipTxtBox.SetToolTip(this.lblMODE, "Radianes\r\n\r\n• Información:\r\n   Calcula la función en RADIANES\r\n   ÚNICAMENTE si e" +
+        "xiste una función \r\n   trigonométrica en el campo de texto.");
+            // 
             // ttipBtn
             // 
             this.ttipBtn.AutoPopDelay = 15000;
@@ -191,19 +210,6 @@ namespace defi_2022.Forms
         "    valores que proporcione.");
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
-            // 
-            // button1
-            // 
-            this.button1.AutoSize = true;
-            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(73, 28);
-            this.button1.TabIndex = 33;
-            this.button1.Text = "Refrescar";
-            this.ttipBtn.SetToolTip(this.button1, "Reiniciar / Limpiar\r\n\r\n• Función: \r\n   Limpia todos los campos de texto y resulta" +
-        "dos.\r\n");
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // btnSigns
             // 
@@ -244,6 +250,19 @@ namespace defi_2022.Forms
             this.ttipBtn.SetToolTip(this.btnPow, "Símbolo de Potencia\r\n\r\n• Función: \r\n   Imprime ^ al campo de la función.\r\n\r\n• Apl" +
         "icación:\r\n    a^b = aᵇ");
             this.btnPow.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.AutoSize = true;
+            this.button1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(73, 28);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Refrescar";
+            this.ttipBtn.SetToolTip(this.button1, "Reiniciar / Limpiar\r\n\r\n• Función: \r\n   Limpia todos los campos de texto y resulta" +
+        "dos.\r\n");
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // ttipOptions
             // 
@@ -333,105 +352,11 @@ namespace defi_2022.Forms
             this.gbTipoResult.TabStop = false;
             this.gbTipoResult.Text = "Tipo de Resultado";
             // 
-            // tabControlSolutions
-            // 
-            this.tabControlSolutions.Controls.Add(this.pagePasos);
-            this.tabControlSolutions.Controls.Add(this.pageGraphic);
-            this.tabControlSolutions.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlSolutions.Location = new System.Drawing.Point(12, 360);
-            this.tabControlSolutions.Name = "tabControlSolutions";
-            this.tabControlSolutions.SelectedIndex = 0;
-            this.tabControlSolutions.ShowToolTips = true;
-            this.tabControlSolutions.Size = new System.Drawing.Size(685, 189);
-            this.tabControlSolutions.TabIndex = 32;
-            // 
-            // pagePasos
-            // 
-            this.pagePasos.Controls.Add(this.tableLayoutPanel1);
-            this.pagePasos.Location = new System.Drawing.Point(4, 27);
-            this.pagePasos.Name = "pagePasos";
-            this.pagePasos.Padding = new System.Windows.Forms.Padding(3);
-            this.pagePasos.Size = new System.Drawing.Size(677, 158);
-            this.pagePasos.TabIndex = 0;
-            this.pagePasos.Text = "Pasos y Solución";
-            this.pagePasos.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.picPaso3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.picPaso4, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.picPaso1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.picPaso2, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(671, 152);
-            this.tableLayoutPanel1.TabIndex = 36;
-            // 
-            // picPaso3
-            // 
-            this.picPaso3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPaso3.Location = new System.Drawing.Point(3, 79);
-            this.picPaso3.Name = "picPaso3";
-            this.picPaso3.Size = new System.Drawing.Size(329, 70);
-            this.picPaso3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPaso3.TabIndex = 35;
-            this.picPaso3.TabStop = false;
-            // 
-            // picPaso4
-            // 
-            this.picPaso4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPaso4.Location = new System.Drawing.Point(338, 79);
-            this.picPaso4.Name = "picPaso4";
-            this.picPaso4.Size = new System.Drawing.Size(330, 70);
-            this.picPaso4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPaso4.TabIndex = 34;
-            this.picPaso4.TabStop = false;
-            // 
-            // picPaso1
-            // 
-            this.picPaso1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPaso1.Location = new System.Drawing.Point(3, 3);
-            this.picPaso1.Name = "picPaso1";
-            this.picPaso1.Size = new System.Drawing.Size(329, 70);
-            this.picPaso1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPaso1.TabIndex = 33;
-            this.picPaso1.TabStop = false;
-            // 
-            // picPaso2
-            // 
-            this.picPaso2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picPaso2.Location = new System.Drawing.Point(338, 3);
-            this.picPaso2.Name = "picPaso2";
-            this.picPaso2.Size = new System.Drawing.Size(330, 70);
-            this.picPaso2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picPaso2.TabIndex = 36;
-            this.picPaso2.TabStop = false;
-            // 
-            // pageGraphic
-            // 
-            this.pageGraphic.BackColor = System.Drawing.Color.Transparent;
-            this.pageGraphic.Controls.Add(this.button1);
-            this.pageGraphic.Controls.Add(this.picGraphic);
-            this.pageGraphic.Location = new System.Drawing.Point(4, 27);
-            this.pageGraphic.Name = "pageGraphic";
-            this.pageGraphic.Padding = new System.Windows.Forms.Padding(3);
-            this.pageGraphic.Size = new System.Drawing.Size(677, 158);
-            this.pageGraphic.TabIndex = 1;
-            this.pageGraphic.Text = "Gráficaᴮᴱᵀᴬ";
-            this.pageGraphic.UseVisualStyleBackColor = true;
-            // 
             // gbResult
             // 
             this.gbResult.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbResult.Controls.Add(this.pictureBox2);
             this.gbResult.Controls.Add(this.picResult);
             this.gbResult.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbResult.Location = new System.Drawing.Point(6, 218);
@@ -440,6 +365,16 @@ namespace defi_2022.Forms
             this.gbResult.TabIndex = 16;
             this.gbResult.TabStop = false;
             this.gbResult.Text = "Resultado";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(482, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
             // 
             // picResult
             // 
@@ -453,10 +388,10 @@ namespace defi_2022.Forms
             // 
             this.gbValues.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbValues.Controls.Add(this.label1);
             this.gbValues.Controls.Add(this.lblA);
+            this.gbValues.Controls.Add(this.lblB);
             this.gbValues.Controls.Add(this.lblMODE);
-            this.gbValues.Controls.Add(this.pictureBox1);
+            this.gbValues.Controls.Add(this.picDX);
             this.gbValues.Controls.Add(this.txtFX);
             this.gbValues.Controls.Add(this.btnPow);
             this.gbValues.Controls.Add(this.btnEuler);
@@ -473,15 +408,37 @@ namespace defi_2022.Forms
             this.gbValues.TabStop = false;
             this.gbValues.Text = "Valores";
             // 
-            // pictureBox1
+            // lblA
             // 
-            this.pictureBox1.Image = global::defi_2022.Properties.Resources.dx;
-            this.pictureBox1.Location = new System.Drawing.Point(457, 101);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 36);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 29;
-            this.pictureBox1.TabStop = false;
+            this.lblA.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblA.AutoSize = true;
+            this.lblA.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(8, 173);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(44, 28);
+            this.lblA.TabIndex = 32;
+            this.lblA.Text = "A =";
+            // 
+            // lblB
+            // 
+            this.lblB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblB.AutoSize = true;
+            this.lblB.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB.Location = new System.Drawing.Point(8, 24);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(44, 28);
+            this.lblB.TabIndex = 31;
+            this.lblB.Text = "B =";
+            // 
+            // picDX
+            // 
+            this.picDX.Image = global::defi_2022.Properties.Resources.dx;
+            this.picDX.Location = new System.Drawing.Point(457, 101);
+            this.picDX.Name = "picDX";
+            this.picDX.Size = new System.Drawing.Size(37, 36);
+            this.picDX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDX.TabIndex = 29;
+            this.picDX.TabStop = false;
             // 
             // picIntegral
             // 
@@ -493,40 +450,145 @@ namespace defi_2022.Forms
             this.picIntegral.TabIndex = 28;
             this.picIntegral.TabStop = false;
             // 
-            // lblMODE
+            // tabControlSolutions
             // 
-            this.lblMODE.AutoSize = true;
-            this.lblMODE.BackColor = System.Drawing.Color.Transparent;
-            this.lblMODE.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMODE.Location = new System.Drawing.Point(104, 82);
-            this.lblMODE.Name = "lblMODE";
-            this.lblMODE.Size = new System.Drawing.Size(51, 16);
-            this.lblMODE.TabIndex = 30;
-            this.lblMODE.Text = "GRADOS";
-            this.ttipTxtBox.SetToolTip(this.lblMODE, "Radianes\r\n\r\n• Información:\r\n   Calcula la función en RADIANES\r\n   ÚNICAMENTE si e" +
-        "xiste una función \r\n   trigonométrica en el campo de texto.");
+            this.tabControlSolutions.Controls.Add(this.pagePasos);
+            this.tabControlSolutions.Controls.Add(this.pageGraphic);
+            this.tabControlSolutions.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlSolutions.Location = new System.Drawing.Point(12, 360);
+            this.tabControlSolutions.Name = "tabControlSolutions";
+            this.tabControlSolutions.SelectedIndex = 0;
+            this.tabControlSolutions.ShowToolTips = true;
+            this.tabControlSolutions.Size = new System.Drawing.Size(685, 189);
+            this.tabControlSolutions.TabIndex = 33;
             // 
-            // lblA
+            // pagePasos
             // 
-            this.lblA.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblA.AutoSize = true;
-            this.lblA.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.Location = new System.Drawing.Point(8, 24);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(44, 28);
-            this.lblA.TabIndex = 31;
-            this.lblA.Text = "B =";
+            this.pagePasos.Controls.Add(this.lblPaso4);
+            this.pagePasos.Controls.Add(this.lblPaso3);
+            this.pagePasos.Controls.Add(this.lblPaso2);
+            this.pagePasos.Controls.Add(this.lblPaso1);
+            this.pagePasos.Controls.Add(this.tblpanelPasos);
+            this.pagePasos.Location = new System.Drawing.Point(4, 27);
+            this.pagePasos.Name = "pagePasos";
+            this.pagePasos.Padding = new System.Windows.Forms.Padding(3);
+            this.pagePasos.Size = new System.Drawing.Size(677, 158);
+            this.pagePasos.TabIndex = 0;
+            this.pagePasos.Text = "Pasos y Solución";
+            this.pagePasos.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // lblPaso4
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 173);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 28);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "A =";
+            this.lblPaso4.AutoSize = true;
+            this.lblPaso4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso4.Location = new System.Drawing.Point(344, 85);
+            this.lblPaso4.Name = "lblPaso4";
+            this.lblPaso4.Size = new System.Drawing.Size(49, 18);
+            this.lblPaso4.TabIndex = 40;
+            this.lblPaso4.Text = "Paso 4";
+            // 
+            // lblPaso3
+            // 
+            this.lblPaso3.AutoSize = true;
+            this.lblPaso3.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso3.Location = new System.Drawing.Point(9, 85);
+            this.lblPaso3.Name = "lblPaso3";
+            this.lblPaso3.Size = new System.Drawing.Size(49, 18);
+            this.lblPaso3.TabIndex = 39;
+            this.lblPaso3.Text = "Paso 3";
+            // 
+            // lblPaso2
+            // 
+            this.lblPaso2.AutoSize = true;
+            this.lblPaso2.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso2.Location = new System.Drawing.Point(344, 9);
+            this.lblPaso2.Name = "lblPaso2";
+            this.lblPaso2.Size = new System.Drawing.Size(49, 18);
+            this.lblPaso2.TabIndex = 38;
+            this.lblPaso2.Text = "Paso 2";
+            // 
+            // lblPaso1
+            // 
+            this.lblPaso1.AutoSize = true;
+            this.lblPaso1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPaso1.Location = new System.Drawing.Point(9, 9);
+            this.lblPaso1.Name = "lblPaso1";
+            this.lblPaso1.Size = new System.Drawing.Size(49, 18);
+            this.lblPaso1.TabIndex = 37;
+            this.lblPaso1.Text = "Paso 1";
+            // 
+            // tblpanelPasos
+            // 
+            this.tblpanelPasos.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tblpanelPasos.ColumnCount = 2;
+            this.tblpanelPasos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblpanelPasos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblpanelPasos.Controls.Add(this.picPaso3, 0, 1);
+            this.tblpanelPasos.Controls.Add(this.picPaso4, 0, 1);
+            this.tblpanelPasos.Controls.Add(this.picPaso1, 0, 0);
+            this.tblpanelPasos.Controls.Add(this.picPaso2, 1, 0);
+            this.tblpanelPasos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblpanelPasos.Location = new System.Drawing.Point(3, 3);
+            this.tblpanelPasos.Name = "tblpanelPasos";
+            this.tblpanelPasos.RowCount = 2;
+            this.tblpanelPasos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblpanelPasos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblpanelPasos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblpanelPasos.Size = new System.Drawing.Size(671, 152);
+            this.tblpanelPasos.TabIndex = 36;
+            // 
+            // picPaso3
+            // 
+            this.picPaso3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picPaso3.Location = new System.Drawing.Point(61, 79);
+            this.picPaso3.Name = "picPaso3";
+            this.picPaso3.Size = new System.Drawing.Size(271, 69);
+            this.picPaso3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPaso3.TabIndex = 35;
+            this.picPaso3.TabStop = false;
+            // 
+            // picPaso4
+            // 
+            this.picPaso4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picPaso4.Location = new System.Drawing.Point(395, 79);
+            this.picPaso4.Name = "picPaso4";
+            this.picPaso4.Size = new System.Drawing.Size(272, 69);
+            this.picPaso4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPaso4.TabIndex = 34;
+            this.picPaso4.TabStop = false;
+            // 
+            // picPaso1
+            // 
+            this.picPaso1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picPaso1.Location = new System.Drawing.Point(61, 4);
+            this.picPaso1.Name = "picPaso1";
+            this.picPaso1.Size = new System.Drawing.Size(271, 68);
+            this.picPaso1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPaso1.TabIndex = 33;
+            this.picPaso1.TabStop = false;
+            // 
+            // picPaso2
+            // 
+            this.picPaso2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picPaso2.Location = new System.Drawing.Point(395, 4);
+            this.picPaso2.Name = "picPaso2";
+            this.picPaso2.Size = new System.Drawing.Size(272, 68);
+            this.picPaso2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picPaso2.TabIndex = 36;
+            this.picPaso2.TabStop = false;
+            // 
+            // pageGraphic
+            // 
+            this.pageGraphic.BackColor = System.Drawing.Color.Transparent;
+            this.pageGraphic.Controls.Add(this.button1);
+            this.pageGraphic.Controls.Add(this.picGraphic);
+            this.pageGraphic.Location = new System.Drawing.Point(4, 27);
+            this.pageGraphic.Name = "pageGraphic";
+            this.pageGraphic.Padding = new System.Windows.Forms.Padding(3);
+            this.pageGraphic.Size = new System.Drawing.Size(677, 158);
+            this.pageGraphic.TabIndex = 1;
+            this.pageGraphic.Text = "Gráficaᴮᴱᵀᴬ";
+            this.pageGraphic.UseVisualStyleBackColor = true;
             // 
             // picGraphic
             // 
@@ -557,21 +619,23 @@ namespace defi_2022.Forms
             this.gbOptions.PerformLayout();
             this.gbTipoResult.ResumeLayout(false);
             this.gbTipoResult.PerformLayout();
+            this.gbResult.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
+            this.gbValues.ResumeLayout(false);
+            this.gbValues.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).EndInit();
             this.tabControlSolutions.ResumeLayout(false);
             this.pagePasos.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.pagePasos.PerformLayout();
+            this.tblpanelPasos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picPaso3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso2)).EndInit();
             this.pageGraphic.ResumeLayout(false);
             this.pageGraphic.PerformLayout();
-            this.gbResult.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picResult)).EndInit();
-            this.gbValues.ResumeLayout(false);
-            this.gbValues.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -592,15 +656,6 @@ namespace defi_2022.Forms
         private System.Windows.Forms.RadioButton rbNormal;
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.CheckBox cbSinEA;
-        private System.Windows.Forms.TabControl tabControlSolutions;
-        private System.Windows.Forms.TabPage pagePasos;
-        private System.Windows.Forms.TabPage pageGraphic;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox picPaso3;
-        private System.Windows.Forms.PictureBox picPaso4;
-        private System.Windows.Forms.PictureBox picPaso1;
-        private System.Windows.Forms.PictureBox picPaso2;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtFX;
         private System.Windows.Forms.TextBox txtB;
         private System.Windows.Forms.TextBox txtA;
@@ -610,11 +665,25 @@ namespace defi_2022.Forms
         private System.Windows.Forms.Button btnEuler;
         private System.Windows.Forms.Button btnPow;
         private System.Windows.Forms.GroupBox gbValues;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picDX;
         private System.Windows.Forms.PictureBox picIntegral;
         private System.Windows.Forms.Label lblMODE;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.Label lblB;
+        private System.Windows.Forms.TabControl tabControlSolutions;
+        private System.Windows.Forms.TabPage pagePasos;
+        private System.Windows.Forms.Label lblPaso4;
+        private System.Windows.Forms.Label lblPaso3;
+        private System.Windows.Forms.Label lblPaso2;
+        private System.Windows.Forms.Label lblPaso1;
+        private System.Windows.Forms.TableLayoutPanel tblpanelPasos;
+        private System.Windows.Forms.PictureBox picPaso3;
+        private System.Windows.Forms.PictureBox picPaso4;
+        private System.Windows.Forms.PictureBox picPaso1;
+        private System.Windows.Forms.PictureBox picPaso2;
+        private System.Windows.Forms.TabPage pageGraphic;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picGraphic;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
