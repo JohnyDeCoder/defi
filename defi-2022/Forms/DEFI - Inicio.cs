@@ -4,6 +4,7 @@ using FontAwesome.Sharp;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace defi_2022
@@ -54,6 +55,11 @@ namespace defi_2022
 
             // Labels
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
+
+            if (!Directory.Exists("Equations"))
+            {
+                Directory.CreateDirectory("Equations");
+            }
         }
 
         #region Controles
@@ -67,6 +73,9 @@ namespace defi_2022
             }
             else
             {
+                Properties.Settings.Default.Counter = 0; // Reinicia el contador al cerrar
+                Properties.Settings.Default.Save(); // Guarda el valor del contador
+
                 e.Cancel = false;
             }
         }
@@ -161,7 +170,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            //Reset();
+            Reset();
         }
 
         private void btnRedTheme_Click(object sender, EventArgs e)
@@ -202,7 +211,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            //Reset();
+            Reset();
         }
 
         private void btnGreenTheme_Click(object sender, EventArgs e)
@@ -243,7 +252,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            //Reset();
+            Reset();
         }
 
         private void btnPurpleTheme_Click(object sender, EventArgs e)
@@ -284,7 +293,7 @@ namespace defi_2022
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
 
             hideSubMenu();
-            //Reset();
+            Reset();
         }
 
         private void btnTags_Click(object sender, EventArgs e)
