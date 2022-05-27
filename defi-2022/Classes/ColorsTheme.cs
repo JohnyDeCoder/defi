@@ -8,12 +8,6 @@ namespace defi_2022.Classes
         public static Color PanelContainerLeft; // Color del panel general principal
         public static Color PanelChildForm; // Color del background de los formularios
         public static Color PanelSubMenu; // Color del submenu principal
-
-        internal static void ChooseTheme(object currentTheme)
-        {
-            throw new NotImplementedException();
-        }
-
         public static Color PrimaryFont; // Color del texto
         public static Color PrimaryFontSelected; // Color del texto seleccionado
         public static Color leftBorderButton; // Color del borde izquierdo del botón seleccionado
@@ -22,7 +16,7 @@ namespace defi_2022.Classes
         public static Color ActiveLinkColor; // Color del link al activar
         public static Color VisitedLinkColor; // Color del link al visitar
 
-        // Default Colors
+        // Blue Colors
         private static readonly Color PanelContainerLeftD = Color.FromArgb(76, 137, 199); // E
         private static readonly Color PanelChildFormD = Color.FromArgb(171, 211, 251); // B
         private static readonly Color PanelSubMenuD = Color.FromArgb(47, 84, 122); // A
@@ -75,7 +69,7 @@ namespace defi_2022.Classes
         {
             switch (Theme)
             {
-                case "Default":
+                case "Blue":
                     PanelContainerLeft = PanelContainerLeftD;
                     PanelChildForm = PanelChildFormD;
                     PanelSubMenu = PanelSubMenuD;

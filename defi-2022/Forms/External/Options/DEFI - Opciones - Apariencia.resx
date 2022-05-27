@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="ttipTxtBox.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 17</value>
-  </metadata>
-  <data name="numericRound.ToolTip" xml:space="preserve">
-    <value>• Escriba número a redondear.
-
-• Información:
-   Toma el número y lo redondea n
-    cantidad de decimales a los valores
-    de la tabla (no altera el resultado final).
-
-• Ejemplo:
-   Redondear 2.718281828 a 4 decimales 
-    = 2.7183</value>
-  </data>
-  <metadata name="ttipBtn.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>430, 17</value>
-  </metadata>
-  <data name="btnSigns.ToolTip" xml:space="preserve">
-    <value>Signos / Símbolos
-
-• Función: 
-   Abre el mapa de símbolos matemáticos donde contiene 
-   todos los símbolos de las operaciones aritméticas y
-   funciones trigonométricas.
-   Al entrar usted puede seleccionar cualquier símbolo para
-   imprimirlo en el campo de la función.</value>
-  </data>
-  <metadata name="ttipOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>518, 17</value>
-  </metadata>
-  <data name="cbSinEA.ToolTip" xml:space="preserve">
-    <value>Sin Factor de Paroᴮᴱᵀᴬ
-
-• Información:
-   Toma ÚNICAMENTE el número 
-    máximo de iteraciones como el
-    límite de la operación.
-
-• Aviso:
-   Se recomienda de 10 a 30 iteraciones.
-   Puede ocasionar fallas o retardos.</value>
-  </data>
 </root>

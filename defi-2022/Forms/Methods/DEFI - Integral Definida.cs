@@ -1,9 +1,9 @@
 ﻿using defi_2022.Classes;
 using System;
 using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
 using AngouriMath.Extensions;
+using AngouriMath;
 
 namespace defi_2022.Forms
 {
@@ -16,9 +16,9 @@ namespace defi_2022.Forms
         private string currentForm; // Variable utilizada para guardar el Name del formulario padre
         public bool error; // Variable utilizada para detectar un error
 
-        public DEFI_Integral_Definida(string currentTheme)
+        public DEFI_Integral_Definida()
         {
-            ColorsTheme.ChooseTheme(currentTheme);
+            ColorsTheme.ChooseTheme(Properties.Settings.Default.Theme);
 
             InitializeComponent();
         }
@@ -67,8 +67,7 @@ namespace defi_2022.Forms
 
             picPaso1.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}\\left[" + expression.Latexise() + "\\right] dx", counter++));
 
-            var integral = expression.Integrate("x");
-            integral = integral.Simplify(); // Simplificar expresiones complicadas
+            Entity integral = expression.Integrate("x").Simplify();
 
             // Escribe la fórmula integrada ya simplificada
 
@@ -129,14 +128,38 @@ namespace defi_2022.Forms
 
             // Resta del límite inferior con el superior
 
-            picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("\\left[" + integralPartB.Latexise() + "\\right] - \\left[" + integralPartA.Latexise() + "\\right]", counter++));
+            // Si es ln...
+            if (integralPartB.Contains("ln") || integralPartA.Contains("ln"))
+            {
+                string calculateLn;
+                string[] partInferiorA, partInferiorB;
 
-            evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical() );
+                partInferiorA = expression.Split('/');
+                partInferiorB = expression.Split('/');
 
-            // Resultado final en unidades cuadradas
+                partInferiorA[1] = partInferiorA[1].Replace("x", a.ToString());
+                partInferiorB[1] = partInferiorB[1].Replace("x", b.ToString());
 
-            picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
-            picResult.Image = new Bitmap(ConvertToLatex.CreateEquation("\\int_{" + a + "}^{" + b + "}\\left[" + integral.Latexise() + "\\right] \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("-ln\\left[\\left|" + partInferiorA[1].Latexise() + "\\right|\\right] + ln\\left[\\left|" + partInferiorB[1].Latexise() + "\\right|\\right]", counter++));
+
+                calculateLn = "-ln(" + partInferiorA[1] + ") - (-ln(" + partInferiorB[1] + "))";
+
+                evalDouble = (double)calculateLn.EvalNumerical();
+
+                // Resultado final en unidades cuadradas
+
+                picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+            }
+            else
+            {
+                picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("\\left[" + integralPartB.Latexise() + "\\right] - \\left[" + integralPartA.Latexise() + "\\right]", counter++));
+
+                evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical());
+
+                // Resultado final en unidades cuadradas
+
+                picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+            }
 
             try
             {

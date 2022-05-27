@@ -64,6 +64,7 @@
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
     </Reference>
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -74,6 +75,7 @@
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -100,6 +102,24 @@
     <Compile Include="Forms\DEFI - Inicio.Designer.cs">
       <DependentUpon>DEFI - Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Apariencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Apariencia.Designer.cs">
+      <DependentUpon>DEFI - Opciones - Apariencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Avanzado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Avanzado.Designer.cs">
+      <DependentUpon>DEFI - Opciones - Avanzado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Idioma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\External\Options\DEFI - Opciones - Idioma.Designer.cs">
+      <DependentUpon>DEFI - Opciones - Idioma.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Methods\DEFI - Integral Definida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +130,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\DEFI - Inicio.resx">
       <DependentUpon>DEFI - Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\External\Options\DEFI - Opciones - Apariencia.resx">
+      <DependentUpon>DEFI - Opciones - Apariencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\External\Options\DEFI - Opciones - Avanzado.resx">
+      <DependentUpon>DEFI - Opciones - Avanzado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\External\Options\DEFI - Opciones - Idioma.resx">
+      <DependentUpon>DEFI - Opciones - Idioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Methods\DEFI - Integral Definida.resx">
       <DependentUpon>DEFI - Integral Definida.cs</DependentUpon>
@@ -141,9 +170,6 @@
   <ItemGroup>
     <Content Include="Resources\dx.png" />
     <Content Include="Resources\integral.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\External\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
