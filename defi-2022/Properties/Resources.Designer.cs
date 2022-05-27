@@ -63,6 +63,16 @@ namespace defi_2022.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DEFI {
+            get {
+                object obj = ResourceManager.GetObject("DEFI", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dx {
             get {
                 object obj = ResourceManager.GetObject("dx", resourceCulture);

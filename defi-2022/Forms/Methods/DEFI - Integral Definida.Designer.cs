@@ -47,15 +47,12 @@ namespace defi_2022.Forms
             this.ttipOptions = new System.Windows.Forms.ToolTip(this.components);
             this.rbRedondear = new System.Windows.Forms.RadioButton();
             this.rbNormal = new System.Windows.Forms.RadioButton();
-            this.cbSinEA = new System.Windows.Forms.CheckBox();
             this.lblMethodName = new System.Windows.Forms.Label();
             this.gbOptions = new System.Windows.Forms.GroupBox();
             this.gbTipoResult = new System.Windows.Forms.GroupBox();
             this.gbValues = new System.Windows.Forms.GroupBox();
             this.lblA = new System.Windows.Forms.Label();
             this.lblB = new System.Windows.Forms.Label();
-            this.picDX = new System.Windows.Forms.PictureBox();
-            this.picIntegral = new System.Windows.Forms.PictureBox();
             this.tabControlSolutions = new System.Windows.Forms.TabControl();
             this.pagePasos = new System.Windows.Forms.TabPage();
             this.lblPaso4 = new System.Windows.Forms.Label();
@@ -63,27 +60,29 @@ namespace defi_2022.Forms
             this.lblPaso2 = new System.Windows.Forms.Label();
             this.lblPaso1 = new System.Windows.Forms.Label();
             this.tblpanelPasos = new System.Windows.Forms.TableLayoutPanel();
+            this.pageGraphic = new System.Windows.Forms.TabPage();
+            this.btnOpenFolder = new FontAwesome.Sharp.IconButton();
+            this.picDX = new System.Windows.Forms.PictureBox();
+            this.picIntegral = new System.Windows.Forms.PictureBox();
             this.picPaso3 = new System.Windows.Forms.PictureBox();
             this.picPaso4 = new System.Windows.Forms.PictureBox();
             this.picPaso2 = new System.Windows.Forms.PictureBox();
             this.picPaso1 = new System.Windows.Forms.PictureBox();
-            this.pageGraphic = new System.Windows.Forms.TabPage();
             this.picGraphic = new System.Windows.Forms.PictureBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).BeginInit();
             this.gbOptions.SuspendLayout();
             this.gbTipoResult.SuspendLayout();
             this.gbValues.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDX)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).BeginInit();
             this.tabControlSolutions.SuspendLayout();
             this.pagePasos.SuspendLayout();
             this.tblpanelPasos.SuspendLayout();
+            this.pageGraphic.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDX)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso1)).BeginInit();
-            this.pageGraphic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,6 +188,7 @@ namespace defi_2022.Forms
             this.ttipBtn.SetToolTip(this.btnReset, "Reiniciar / Limpiar\r\n\r\n• Función: \r\n   Limpia todos los campos de texto y resulta" +
         "dos.\r\n");
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnCalculate
             // 
@@ -215,6 +215,7 @@ namespace defi_2022.Forms
             this.btnSigns.Text = "Mapa de Signos";
             this.ttipBtn.SetToolTip(this.btnSigns, resources.GetString("btnSigns.ToolTip"));
             this.btnSigns.UseVisualStyleBackColor = true;
+            this.btnSigns.Click += new System.EventHandler(this.btnSigns_Click);
             // 
             // btnEuler
             // 
@@ -229,6 +230,7 @@ namespace defi_2022.Forms
             this.ttipBtn.SetToolTip(this.btnEuler, "Símbolo de Euler ℯ\r\n\r\n• Función: \r\n   Imprime ℯ al campo de la función.\r\n\r\n• Valo" +
         "r:\r\n    ℯ = 2.718281828\r\n\r\n• Aplicación:\r\n    ℯ^n ó ℯn");
             this.btnEuler.UseVisualStyleBackColor = true;
+            this.btnEuler.Click += new System.EventHandler(this.btnEuler_Click);
             // 
             // btnPow
             // 
@@ -243,6 +245,7 @@ namespace defi_2022.Forms
             this.ttipBtn.SetToolTip(this.btnPow, "Símbolo de Potencia\r\n\r\n• Función: \r\n   Imprime ^ al campo de la función.\r\n\r\n• Apl" +
         "icación:\r\n    a^b = aᵇ");
             this.btnPow.UseVisualStyleBackColor = true;
+            this.btnPow.Click += new System.EventHandler(this.btnPow_Click);
             // 
             // button1
             // 
@@ -278,6 +281,7 @@ namespace defi_2022.Forms
             this.ttipOptions.SetToolTip(this.rbRedondear, "Redondear a n decimales\r\n\r\n• Información:\r\n   Toma el número del cuadro de número" +
         "\r\n   de la derecha y redondea los valores.");
             this.rbRedondear.UseVisualStyleBackColor = true;
+            this.rbRedondear.CheckedChanged += new System.EventHandler(this.rbRedondear_CheckedChanged);
             // 
             // rbNormal
             // 
@@ -293,20 +297,6 @@ namespace defi_2022.Forms
             this.ttipOptions.SetToolTip(this.rbNormal, "Resultado sin alterar\r\n\r\n• Información:\r\n   No altera el resultado.");
             this.rbNormal.UseVisualStyleBackColor = true;
             // 
-            // cbSinEA
-            // 
-            this.cbSinEA.AutoSize = true;
-            this.cbSinEA.Checked = true;
-            this.cbSinEA.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbSinEA.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSinEA.Location = new System.Drawing.Point(6, 19);
-            this.cbSinEA.Name = "cbSinEA";
-            this.cbSinEA.Size = new System.Drawing.Size(143, 22);
-            this.cbSinEA.TabIndex = 11;
-            this.cbSinEA.Text = "Mostrar Gráficaᴮᴱᵀᴬ";
-            this.ttipOptions.SetToolTip(this.cbSinEA, resources.GetString("cbSinEA.ToolTip"));
-            this.cbSinEA.UseVisualStyleBackColor = true;
-            // 
             // lblMethodName
             // 
             this.lblMethodName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -321,7 +311,6 @@ namespace defi_2022.Forms
             // 
             // gbOptions
             // 
-            this.gbOptions.Controls.Add(this.cbSinEA);
             this.gbOptions.Controls.Add(this.gbTipoResult);
             this.gbOptions.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbOptions.Location = new System.Drawing.Point(12, 193);
@@ -337,9 +326,9 @@ namespace defi_2022.Forms
             this.gbTipoResult.Controls.Add(this.rbRedondear);
             this.gbTipoResult.Controls.Add(this.rbNormal);
             this.gbTipoResult.Font = new System.Drawing.Font("Trebuchet MS", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbTipoResult.Location = new System.Drawing.Point(6, 47);
+            this.gbTipoResult.Location = new System.Drawing.Point(6, 21);
             this.gbTipoResult.Name = "gbTipoResult";
-            this.gbTipoResult.Size = new System.Drawing.Size(162, 109);
+            this.gbTipoResult.Size = new System.Drawing.Size(162, 104);
             this.gbTipoResult.TabIndex = 15;
             this.gbTipoResult.TabStop = false;
             this.gbTipoResult.Text = "Tipo de Resultado";
@@ -386,27 +375,6 @@ namespace defi_2022.Forms
             this.lblB.Size = new System.Drawing.Size(43, 28);
             this.lblB.TabIndex = 31;
             this.lblB.Text = "b =";
-            // 
-            // picDX
-            // 
-            this.picDX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picDX.Image = global::defi_2022.Properties.Resources.dx;
-            this.picDX.Location = new System.Drawing.Point(457, 101);
-            this.picDX.Name = "picDX";
-            this.picDX.Size = new System.Drawing.Size(37, 36);
-            this.picDX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picDX.TabIndex = 29;
-            this.picDX.TabStop = false;
-            // 
-            // picIntegral
-            // 
-            this.picIntegral.Image = global::defi_2022.Properties.Resources.integral;
-            this.picIntegral.Location = new System.Drawing.Point(39, 64);
-            this.picIntegral.Name = "picIntegral";
-            this.picIntegral.Size = new System.Drawing.Size(59, 102);
-            this.picIntegral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picIntegral.TabIndex = 28;
-            this.picIntegral.TabStop = false;
             // 
             // tabControlSolutions
             // 
@@ -500,6 +468,58 @@ namespace defi_2022.Forms
             this.tblpanelPasos.Size = new System.Drawing.Size(671, 152);
             this.tblpanelPasos.TabIndex = 36;
             // 
+            // pageGraphic
+            // 
+            this.pageGraphic.BackColor = System.Drawing.Color.Transparent;
+            this.pageGraphic.Controls.Add(this.button1);
+            this.pageGraphic.Controls.Add(this.picGraphic);
+            this.pageGraphic.Location = new System.Drawing.Point(4, 27);
+            this.pageGraphic.Name = "pageGraphic";
+            this.pageGraphic.Padding = new System.Windows.Forms.Padding(3);
+            this.pageGraphic.Size = new System.Drawing.Size(677, 158);
+            this.pageGraphic.TabIndex = 1;
+            this.pageGraphic.Text = "Gráficaᴮᴱᵀᴬ";
+            this.pageGraphic.UseVisualStyleBackColor = true;
+            // 
+            // btnOpenFolder
+            // 
+            this.btnOpenFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnOpenFolder.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenFolder.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
+            this.btnOpenFolder.IconColor = System.Drawing.Color.Black;
+            this.btnOpenFolder.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnOpenFolder.IconSize = 25;
+            this.btnOpenFolder.Location = new System.Drawing.Point(552, 354);
+            this.btnOpenFolder.Name = "btnOpenFolder";
+            this.btnOpenFolder.Size = new System.Drawing.Size(141, 30);
+            this.btnOpenFolder.TabIndex = 34;
+            this.btnOpenFolder.Text = "Abrir imágenes";
+            this.btnOpenFolder.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnOpenFolder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOpenFolder.UseVisualStyleBackColor = true;
+            this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
+            // 
+            // picDX
+            // 
+            this.picDX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.picDX.Image = global::defi_2022.Properties.Resources.dx;
+            this.picDX.Location = new System.Drawing.Point(457, 101);
+            this.picDX.Name = "picDX";
+            this.picDX.Size = new System.Drawing.Size(37, 36);
+            this.picDX.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picDX.TabIndex = 29;
+            this.picDX.TabStop = false;
+            // 
+            // picIntegral
+            // 
+            this.picIntegral.Image = global::defi_2022.Properties.Resources.integral;
+            this.picIntegral.Location = new System.Drawing.Point(39, 64);
+            this.picIntegral.Name = "picIntegral";
+            this.picIntegral.Size = new System.Drawing.Size(59, 102);
+            this.picIntegral.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picIntegral.TabIndex = 28;
+            this.picIntegral.TabStop = false;
+            // 
             // picPaso3
             // 
             this.picPaso3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -552,19 +572,6 @@ namespace defi_2022.Forms
             this.picPaso1.TabIndex = 33;
             this.picPaso1.TabStop = false;
             // 
-            // pageGraphic
-            // 
-            this.pageGraphic.BackColor = System.Drawing.Color.Transparent;
-            this.pageGraphic.Controls.Add(this.button1);
-            this.pageGraphic.Controls.Add(this.picGraphic);
-            this.pageGraphic.Location = new System.Drawing.Point(4, 27);
-            this.pageGraphic.Name = "pageGraphic";
-            this.pageGraphic.Padding = new System.Windows.Forms.Padding(3);
-            this.pageGraphic.Size = new System.Drawing.Size(677, 158);
-            this.pageGraphic.TabIndex = 1;
-            this.pageGraphic.Text = "Gráficaᴮᴱᵀᴬ";
-            this.pageGraphic.UseVisualStyleBackColor = true;
-            // 
             // picGraphic
             // 
             this.picGraphic.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -574,29 +581,12 @@ namespace defi_2022.Forms
             this.picGraphic.TabIndex = 34;
             this.picGraphic.TabStop = false;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.FolderOpen;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(552, 354);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(141, 30);
-            this.iconButton1.TabIndex = 34;
-            this.iconButton1.Text = "Abrir imágenes";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
             // DEFI_Integral_Definida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 561);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.lblMethodName);
             this.Controls.Add(this.gbValues);
             this.Controls.Add(this.btnReset);
@@ -606,27 +596,25 @@ namespace defi_2022.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DEFI_Integral_Definida";
             this.Text = "DEFI - Integral Definida";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DEFI_Integral_Definida_FormClosing);
             this.Load += new System.EventHandler(this.DEFI_Integral_Definida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericRound)).EndInit();
             this.gbOptions.ResumeLayout(false);
-            this.gbOptions.PerformLayout();
             this.gbTipoResult.ResumeLayout(false);
             this.gbTipoResult.PerformLayout();
             this.gbValues.ResumeLayout(false);
             this.gbValues.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picDX)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).EndInit();
             this.tabControlSolutions.ResumeLayout(false);
             this.pagePasos.ResumeLayout(false);
             this.pagePasos.PerformLayout();
             this.tblpanelPasos.ResumeLayout(false);
+            this.pageGraphic.ResumeLayout(false);
+            this.pageGraphic.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picDX)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picIntegral)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPaso1)).EndInit();
-            this.pageGraphic.ResumeLayout(false);
-            this.pageGraphic.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGraphic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -672,7 +660,6 @@ namespace defi_2022.Forms
         private System.Windows.Forms.TabPage pageGraphic;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox picGraphic;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.CheckBox cbSinEA;
+        private FontAwesome.Sharp.IconButton btnOpenFolder;
     }
 }

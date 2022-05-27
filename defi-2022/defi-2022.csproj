@@ -102,6 +102,12 @@
     <Compile Include="Forms\DEFI - Inicio.Designer.cs">
       <DependentUpon>DEFI - Inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\External\DEFI - Signos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\External\DEFI - Signos.Designer.cs">
+      <DependentUpon>DEFI - Signos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\External\Options\DEFI - Opciones - Apariencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\DEFI - Inicio.resx">
       <DependentUpon>DEFI - Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\External\DEFI - Signos.resx">
+      <DependentUpon>DEFI - Signos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\External\Options\DEFI - Opciones - Apariencia.resx">
       <DependentUpon>DEFI - Opciones - Apariencia.cs</DependentUpon>
@@ -168,6 +177,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\DEFI.png" />
     <Content Include="Resources\dx.png" />
     <Content Include="Resources\integral.png" />
   </ItemGroup>
