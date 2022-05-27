@@ -32,9 +32,13 @@ namespace defi_2022
             this.panelForm = new System.Windows.Forms.Panel();
             this.lblVersion = new System.Windows.Forms.Label();
             this.panelContainerLeft = new System.Windows.Forms.Panel();
+            this.panelSubMenuOptions = new System.Windows.Forms.Panel();
             this.panelSubMenuHelp = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pbxFormLogo = new System.Windows.Forms.PictureBox();
+            this.btnAdvance = new FontAwesome.Sharp.IconButton();
+            this.btnLang = new FontAwesome.Sharp.IconButton();
+            this.btnAppearance = new FontAwesome.Sharp.IconButton();
             this.btnOptions = new FontAwesome.Sharp.IconButton();
             this.btnTags = new FontAwesome.Sharp.IconButton();
             this.btnAbout = new FontAwesome.Sharp.IconButton();
@@ -42,15 +46,14 @@ namespace defi_2022
             this.btnAyuda = new FontAwesome.Sharp.IconButton();
             this.btnIntegral = new FontAwesome.Sharp.IconButton();
             this.btnExit = new FontAwesome.Sharp.IconButton();
-            this.panelSubMenuOptions = new System.Windows.Forms.Panel();
-            this.btnAdvance = new FontAwesome.Sharp.IconButton();
-            this.btnLang = new FontAwesome.Sharp.IconButton();
-            this.btnAppearance = new FontAwesome.Sharp.IconButton();
+            this.pbDEFILogo = new System.Windows.Forms.PictureBox();
             this.panelForm.SuspendLayout();
             this.panelContainerLeft.SuspendLayout();
-            this.panelSubMenuHelp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFormLogo)).BeginInit();
             this.panelSubMenuOptions.SuspendLayout();
+            this.panelSubMenuHelp.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFormLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDEFILogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panelForm
@@ -94,6 +97,18 @@ namespace defi_2022
             this.panelContainerLeft.Size = new System.Drawing.Size(225, 561);
             this.panelContainerLeft.TabIndex = 4;
             // 
+            // panelSubMenuOptions
+            // 
+            this.panelSubMenuOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.panelSubMenuOptions.Controls.Add(this.btnAdvance);
+            this.panelSubMenuOptions.Controls.Add(this.btnLang);
+            this.panelSubMenuOptions.Controls.Add(this.btnAppearance);
+            this.panelSubMenuOptions.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuOptions.Location = new System.Drawing.Point(0, 360);
+            this.panelSubMenuOptions.Name = "panelSubMenuOptions";
+            this.panelSubMenuOptions.Size = new System.Drawing.Size(225, 120);
+            this.panelSubMenuOptions.TabIndex = 25;
+            // 
             // panelSubMenuHelp
             // 
             this.panelSubMenuHelp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
@@ -107,6 +122,7 @@ namespace defi_2022
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.pbDEFILogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
@@ -115,13 +131,83 @@ namespace defi_2022
             // 
             // pbxFormLogo
             // 
-            this.pbxFormLogo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pbxFormLogo.Location = new System.Drawing.Point(0, 145);
+            this.pbxFormLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbxFormLogo.Image = global::defi_2022.Properties.Resources.DEFI;
+            this.pbxFormLogo.Location = new System.Drawing.Point(0, 0);
             this.pbxFormLogo.Name = "pbxFormLogo";
-            this.pbxFormLogo.Size = new System.Drawing.Size(709, 302);
+            this.pbxFormLogo.Size = new System.Drawing.Size(709, 561);
             this.pbxFormLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxFormLogo.TabIndex = 8;
             this.pbxFormLogo.TabStop = false;
+            // 
+            // btnAdvance
+            // 
+            this.btnAdvance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdvance.FlatAppearance.BorderSize = 0;
+            this.btnAdvance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdvance.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdvance.ForeColor = System.Drawing.Color.White;
+            this.btnAdvance.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAdvance.IconColor = System.Drawing.Color.White;
+            this.btnAdvance.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAdvance.IconSize = 28;
+            this.btnAdvance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdvance.Location = new System.Drawing.Point(0, 80);
+            this.btnAdvance.Name = "btnAdvance";
+            this.btnAdvance.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAdvance.Size = new System.Drawing.Size(225, 40);
+            this.btnAdvance.TabIndex = 13;
+            this.btnAdvance.Text = "Avanzado";
+            this.btnAdvance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdvance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdvance.UseVisualStyleBackColor = true;
+            this.btnAdvance.Click += new System.EventHandler(this.btnAdvance_Click);
+            // 
+            // btnLang
+            // 
+            this.btnLang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLang.FlatAppearance.BorderSize = 0;
+            this.btnLang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLang.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLang.ForeColor = System.Drawing.Color.White;
+            this.btnLang.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnLang.IconColor = System.Drawing.Color.White;
+            this.btnLang.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLang.IconSize = 28;
+            this.btnLang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLang.Location = new System.Drawing.Point(0, 40);
+            this.btnLang.Name = "btnLang";
+            this.btnLang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnLang.Size = new System.Drawing.Size(225, 40);
+            this.btnLang.TabIndex = 12;
+            this.btnLang.Text = "Idioma";
+            this.btnLang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLang.UseVisualStyleBackColor = true;
+            this.btnLang.Click += new System.EventHandler(this.btnLang_Click);
+            // 
+            // btnAppearance
+            // 
+            this.btnAppearance.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAppearance.FlatAppearance.BorderSize = 0;
+            this.btnAppearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppearance.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppearance.ForeColor = System.Drawing.Color.White;
+            this.btnAppearance.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnAppearance.IconColor = System.Drawing.Color.White;
+            this.btnAppearance.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAppearance.IconSize = 28;
+            this.btnAppearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAppearance.Location = new System.Drawing.Point(0, 0);
+            this.btnAppearance.Name = "btnAppearance";
+            this.btnAppearance.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnAppearance.Size = new System.Drawing.Size(225, 40);
+            this.btnAppearance.TabIndex = 11;
+            this.btnAppearance.Text = "Apariencia";
+            this.btnAppearance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAppearance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAppearance.UseVisualStyleBackColor = true;
+            this.btnAppearance.Click += new System.EventHandler(this.btnAppearance_Click);
             // 
             // btnOptions
             // 
@@ -284,86 +370,17 @@ namespace defi_2022
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // panelSubMenuOptions
+            // pbDEFILogo
             // 
-            this.panelSubMenuOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.panelSubMenuOptions.Controls.Add(this.btnAdvance);
-            this.panelSubMenuOptions.Controls.Add(this.btnLang);
-            this.panelSubMenuOptions.Controls.Add(this.btnAppearance);
-            this.panelSubMenuOptions.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuOptions.Location = new System.Drawing.Point(0, 360);
-            this.panelSubMenuOptions.Name = "panelSubMenuOptions";
-            this.panelSubMenuOptions.Size = new System.Drawing.Size(225, 120);
-            this.panelSubMenuOptions.TabIndex = 25;
-            // 
-            // btnAdvance
-            // 
-            this.btnAdvance.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdvance.FlatAppearance.BorderSize = 0;
-            this.btnAdvance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdvance.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdvance.ForeColor = System.Drawing.Color.White;
-            this.btnAdvance.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAdvance.IconColor = System.Drawing.Color.White;
-            this.btnAdvance.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAdvance.IconSize = 28;
-            this.btnAdvance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdvance.Location = new System.Drawing.Point(0, 80);
-            this.btnAdvance.Name = "btnAdvance";
-            this.btnAdvance.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAdvance.Size = new System.Drawing.Size(225, 40);
-            this.btnAdvance.TabIndex = 13;
-            this.btnAdvance.Text = "Avanzado";
-            this.btnAdvance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdvance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdvance.UseVisualStyleBackColor = true;
-            this.btnAdvance.Click += new System.EventHandler(this.btnAdvance_Click);
-            // 
-            // btnLang
-            // 
-            this.btnLang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLang.FlatAppearance.BorderSize = 0;
-            this.btnLang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLang.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLang.ForeColor = System.Drawing.Color.White;
-            this.btnLang.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnLang.IconColor = System.Drawing.Color.White;
-            this.btnLang.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLang.IconSize = 28;
-            this.btnLang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLang.Location = new System.Drawing.Point(0, 40);
-            this.btnLang.Name = "btnLang";
-            this.btnLang.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnLang.Size = new System.Drawing.Size(225, 40);
-            this.btnLang.TabIndex = 12;
-            this.btnLang.Text = "Idioma";
-            this.btnLang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLang.UseVisualStyleBackColor = true;
-            this.btnLang.Click += new System.EventHandler(this.btnLang_Click);
-            // 
-            // btnAppearance
-            // 
-            this.btnAppearance.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAppearance.FlatAppearance.BorderSize = 0;
-            this.btnAppearance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppearance.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppearance.ForeColor = System.Drawing.Color.White;
-            this.btnAppearance.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnAppearance.IconColor = System.Drawing.Color.White;
-            this.btnAppearance.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAppearance.IconSize = 28;
-            this.btnAppearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAppearance.Location = new System.Drawing.Point(0, 0);
-            this.btnAppearance.Name = "btnAppearance";
-            this.btnAppearance.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnAppearance.Size = new System.Drawing.Size(225, 40);
-            this.btnAppearance.TabIndex = 11;
-            this.btnAppearance.Text = "Apariencia";
-            this.btnAppearance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAppearance.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAppearance.UseVisualStyleBackColor = true;
-            this.btnAppearance.Click += new System.EventHandler(this.btnAppearance_Click);
+            this.pbDEFILogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbDEFILogo.Image = global::defi_2022.Properties.Resources.DEFI;
+            this.pbDEFILogo.Location = new System.Drawing.Point(0, 0);
+            this.pbDEFILogo.Name = "pbDEFILogo";
+            this.pbDEFILogo.Size = new System.Drawing.Size(225, 100);
+            this.pbDEFILogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDEFILogo.TabIndex = 0;
+            this.pbDEFILogo.TabStop = false;
+            this.pbDEFILogo.Click += new System.EventHandler(this.pbDEFILogo_Click);
             // 
             // DEFI_Inicio
             // 
@@ -382,9 +399,11 @@ namespace defi_2022
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
             this.panelContainerLeft.ResumeLayout(false);
-            this.panelSubMenuHelp.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbxFormLogo)).EndInit();
             this.panelSubMenuOptions.ResumeLayout(false);
+            this.panelSubMenuHelp.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxFormLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDEFILogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -408,6 +427,7 @@ namespace defi_2022
         private FontAwesome.Sharp.IconButton btnAdvance;
         private FontAwesome.Sharp.IconButton btnLang;
         private FontAwesome.Sharp.IconButton btnAppearance;
+        private System.Windows.Forms.PictureBox pbDEFILogo;
     }
 }
 

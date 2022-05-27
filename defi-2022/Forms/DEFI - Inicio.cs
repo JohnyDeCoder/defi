@@ -79,6 +79,11 @@ namespace defi_2022
             }
         }
 
+        private void pbDEFILogo_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
+
         private void btnIntegral_Click(object sender, EventArgs e)
         {
             if (Text != "DEFI - Integral Definida")

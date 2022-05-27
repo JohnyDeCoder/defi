@@ -148,16 +148,4 @@
   <metadata name="ttipOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>518, 17</value>
   </metadata>
-  <data name="cbSinEA.ToolTip" xml:space="preserve">
-    <value>Sin Factor de Paroᴮᴱᵀᴬ
-
-• Información:
-   Toma ÚNICAMENTE el número 
-    máximo de iteraciones como el
-    límite de la operación.
-
-• Aviso:
-   Se recomienda de 10 a 30 iteraciones.
-   Puede ocasionar fallas o retardos.</value>
-  </data>
 </root>

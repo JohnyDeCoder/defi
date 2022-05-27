@@ -1,9 +1,11 @@
 ﻿using defi_2022.Classes;
+using defi_2022.Forms.External;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 using AngouriMath.Extensions;
 using AngouriMath;
+using System.Linq;
 
 namespace defi_2022.Forms
 {
@@ -144,23 +146,50 @@ namespace defi_2022.Forms
 
                 calculateLn = "-ln(" + partInferiorA[1] + ") - (-ln(" + partInferiorB[1] + "))";
 
-                evalDouble = (double)calculateLn.EvalNumerical();
+                if (rbRedondear.Checked == true)
+                {
+                    round = Convert.ToInt32(Math.Round(numericRound.Value, 0));
 
-                // Resultado final en unidades cuadradas
+                    evalDouble = (double)calculateLn.EvalNumerical();
+                    evalDouble = Math.Round(evalDouble, round);
 
-                picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                    // Resultado final en unidades cuadradas
+
+                    picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                }
+                else
+                {
+                    evalDouble = (double)calculateLn.EvalNumerical();
+
+                    // Resultado final en unidades cuadradas
+
+                    picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                }
             }
             else
             {
                 picPaso3.Image = new Bitmap(ConvertToLatex.CreateEquation("\\left[" + integralPartB.Latexise() + "\\right] - \\left[" + integralPartA.Latexise() + "\\right]", counter++));
 
-                evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical());
+                if (rbRedondear.Checked == true)
+                {
+                    round = Convert.ToInt32(Math.Round(numericRound.Value, 0));
 
-                // Resultado final en unidades cuadradas
+                    evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical());
+                    evalDouble = Math.Round(evalDouble, round);
 
-                picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                    // Resultado final en unidades cuadradas
+
+                    picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                }
+                else
+                {
+                    evalDouble = (double)(integralPartB.EvalNumerical() - integralPartA.EvalNumerical());
+
+                    // Resultado final en unidades cuadradas
+
+                    picPaso4.Image = new Bitmap(ConvertToLatex.CreateEquation("Result \\approx " + evalDouble.ToString().Latexise() + "u^{2}", counter++));
+                }
             }
-
             try
             {
 
@@ -325,19 +354,19 @@ namespace defi_2022.Forms
 
         private void btnSigns_Click(object sender, EventArgs e)
         {
-            //Form ROOTPROX_Signos = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "ROOTPROX_Signos").SingleOrDefault<Form>();
+            Form DEFI_Signos = Application.OpenForms.OfType<Form>().Where(pre => pre.Name == "DEFI_Signos").SingleOrDefault<Form>();
 
-            //if (ROOTPROX_Signos != null)
-            //{
-            //    ROOTPROX_Signos.BringToFront();
-            //}
-            //else
-            //{
-            //    currentForm = GetType().Name; // Obtiene el nombre del formulario padre
-            //    ROOTPROX_Signos formSigns = new ROOTPROX_Signos(currentForm);
-            //    AddOwnedForm(formSigns);
-            //    formSigns.Show();
-            //}
+            if (DEFI_Signos != null)
+            {
+                DEFI_Signos.BringToFront();
+            }
+            else
+            {
+                currentForm = GetType().Name; // Obtiene el nombre del formulario padre
+                DEFI_Signos formSigns = new DEFI_Signos(currentForm);
+                AddOwnedForm(formSigns);
+                formSigns.Show();
+            }
         }
 
         private void rbRedondear_CheckedChanged(object sender, EventArgs e)
@@ -352,21 +381,18 @@ namespace defi_2022.Forms
             }
         }
 
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"Equations\");
+        }
+
         // Methods
 
         private void Reset()
         {
-            //dgvResults.Rows.Clear();
-            //dgvResults.Refresh();
-
-            //dgvResultAprox.Rows.Clear();
-            //dgvResultAprox.Refresh();
-
-            //txtFX.Text = "x";
-            //txtA.Text = "0";
-            //txtB.Text = "1";
-            //txtNmax.Text = "20";
-            //txtE.Text = "0.01";
+            txtFX.Text = "x";
+            txtA.Text = "0";
+            txtB.Text = "1";
         }
 
         // Validation
@@ -377,7 +403,7 @@ namespace defi_2022.Forms
 
             // Solo aceptar dígitos, punto decimal y guión de resta.
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)
-                && (e.KeyChar != '.') && (e.KeyChar != '-'))
+                && (e.KeyChar != '.'))
             {
                 e.Handled = true;
             }
@@ -436,11 +462,6 @@ namespace defi_2022.Forms
                     txtContains = true;
                 }
             }
-        }
-
-        private void DEFI_Integral_Definida_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }
