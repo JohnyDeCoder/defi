@@ -1,5 +1,7 @@
 ﻿using defi_2022.Classes; // Clase
 using defi_2022.Forms;
+using defi_2022.Forms.External;
+using defi_2022.Forms.External.Options;
 using FontAwesome.Sharp;
 using System;
 using System.Diagnostics;
@@ -15,7 +17,6 @@ namespace defi_2022
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form activeForm;
-        private string currentTheme;
 
         public DEFI_Inicio()
         {
@@ -29,7 +30,7 @@ namespace defi_2022
 
         private void DEFI_Inicio_Load(object sender, EventArgs e)
         {
-            ColorsTheme.ChooseTheme("Default");
+            ColorsTheme.ChooseTheme(Properties.Settings.Default.Theme);
             // Left Panel
             panelContainerLeft.BackColor = ColorsTheme.PanelContainerLeft;
 
@@ -38,23 +39,20 @@ namespace defi_2022
 
             //SubMenus
             panelSubMenuHelp.BackColor = ColorsTheme.PanelSubMenu;
-            panelSubMenuTheme.BackColor = ColorsTheme.PanelSubMenu;
+            panelSubMenuOptions.BackColor = ColorsTheme.PanelSubMenu;
 
             // Buttons Font
             btnIntegral.ForeColor = ColorsTheme.PrimaryFont; // Integral Definida Button
             btnAyuda.ForeColor = ColorsTheme.PrimaryFont; // Help Button
             btnGuia.ForeColor = ColorsTheme.PrimaryFont;
             btnAbout.ForeColor = ColorsTheme.PrimaryFont;
-            btnTheme.ForeColor = ColorsTheme.PrimaryFont; // Theme Button
-            btnBlueTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnRedTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnGreenTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnPurpleTheme.ForeColor = ColorsTheme.PrimaryFont;
             btnTags.ForeColor = ColorsTheme.PrimaryFont; // Tags Button
             btnExit.ForeColor = ColorsTheme.PrimaryFont; // Exit Button
 
             // Labels
             lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
+            //lblSeparator.BackColor = ColorsTheme.PanelSubMenu;
+            //lblSeparator.ForeColor = ColorsTheme.PanelSubMenu;
 
             if (!Directory.Exists("Equations"))
             {
@@ -74,7 +72,8 @@ namespace defi_2022
             else
             {
                 Properties.Settings.Default.Counter = 0; // Reinicia el contador al cerrar
-                Properties.Settings.Default.Save(); // Guarda el valor del contador
+
+                Properties.Settings.Default.Save(); // Guardas cambios.
 
                 e.Cancel = false;
             }
@@ -84,7 +83,7 @@ namespace defi_2022
         {
             if (Text != "DEFI - Integral Definida")
             {
-                openChildForm(new DEFI_Integral_Definida(currentTheme));
+                openChildForm(new DEFI_Integral_Definida());
             }
 
             activateBtn(sender);
@@ -94,7 +93,6 @@ namespace defi_2022
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             showSubMenu(panelSubMenuHelp);
-
             activateBtn(sender);
         }
 
@@ -108,6 +106,7 @@ namespace defi_2022
             }
 
             hideSubMenu();
+            activateBtn(sender);
         }
 
         private void btnAbout_Click(object sender, EventArgs e)
@@ -125,177 +124,6 @@ namespace defi_2022
             Reset();
         }
 
-        private void btnTheme_Click(object sender, EventArgs e)
-        {
-            showSubMenu(panelSubMenuTheme);
-
-            activateBtn(sender);
-        }
-
-        private void btnBlueTheme_Click(object sender, EventArgs e)
-        {
-            currentTheme = "Default";
-            ColorsTheme.ChooseTheme("Default");
-
-            // Left Panel
-            panelContainerLeft.BackColor = ColorsTheme.PanelContainerLeft;
-
-            btnIntegral.BackColor = ColorsTheme.PanelContainerLeft;
-            btnAyuda.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTheme.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTags.BackColor = ColorsTheme.PanelContainerLeft;
-            btnExit.BackColor = ColorsTheme.PanelContainerLeft;
-
-            // Child Form
-            panelForm.BackColor = ColorsTheme.PanelChildForm;
-
-            //SubMenus
-            panelSubMenuHelp.BackColor = ColorsTheme.PanelSubMenu;
-            panelSubMenuTheme.BackColor = ColorsTheme.PanelSubMenu;
-
-            // Buttons Font
-            btnIntegral.ForeColor = ColorsTheme.PrimaryFont; // Methods Button
-            btnAyuda.ForeColor = ColorsTheme.PrimaryFont; // Help Button
-            btnGuia.ForeColor = ColorsTheme.PrimaryFont;
-            btnAbout.ForeColor = ColorsTheme.PrimaryFont;
-            btnTheme.ForeColor = ColorsTheme.PrimaryFont; // Theme Button
-            btnBlueTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnRedTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnGreenTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnPurpleTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnTags.ForeColor = ColorsTheme.PrimaryFont; // Tags Button
-            btnExit.ForeColor = ColorsTheme.PrimaryFont; // Exit Button
-
-            // Labels
-            lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
-
-            hideSubMenu();
-            Reset();
-        }
-
-        private void btnRedTheme_Click(object sender, EventArgs e)
-        {
-            currentTheme = "Red";
-            ColorsTheme.ChooseTheme("Red");
-
-            // Left Panel
-            panelContainerLeft.BackColor = ColorsTheme.PanelContainerLeft;
-
-            btnIntegral.BackColor = ColorsTheme.PanelContainerLeft;
-            btnAyuda.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTheme.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTags.BackColor = ColorsTheme.PanelContainerLeft;
-            btnExit.BackColor = ColorsTheme.PanelContainerLeft;
-
-            // Child Form
-            panelForm.BackColor = ColorsTheme.PanelChildForm;
-
-            //SubMenus
-            panelSubMenuHelp.BackColor = ColorsTheme.PanelSubMenu;
-            panelSubMenuTheme.BackColor = ColorsTheme.PanelSubMenu;
-
-            // Buttons Font
-            btnIntegral.ForeColor = ColorsTheme.PrimaryFont; // Methods Button
-            btnAyuda.ForeColor = ColorsTheme.PrimaryFont; // Help Button
-            btnGuia.ForeColor = ColorsTheme.PrimaryFont;
-            btnAbout.ForeColor = ColorsTheme.PrimaryFont;
-            btnTheme.ForeColor = ColorsTheme.PrimaryFont; // Theme Button
-            btnBlueTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnRedTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnGreenTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnPurpleTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnTags.ForeColor = ColorsTheme.PrimaryFont; // Tags Button
-            btnExit.ForeColor = ColorsTheme.PrimaryFont; // Exit Button
-
-            // Labels
-            lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
-
-            hideSubMenu();
-            Reset();
-        }
-
-        private void btnGreenTheme_Click(object sender, EventArgs e)
-        {
-            currentTheme = "Green";
-            ColorsTheme.ChooseTheme("Green");
-
-            // Left Panel
-            panelContainerLeft.BackColor = ColorsTheme.PanelContainerLeft;
-
-            btnIntegral.BackColor = ColorsTheme.PanelContainerLeft;
-            btnAyuda.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTheme.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTags.BackColor = ColorsTheme.PanelContainerLeft;
-            btnExit.BackColor = ColorsTheme.PanelContainerLeft;
-
-            // Child Form
-            panelForm.BackColor = ColorsTheme.PanelChildForm;
-
-            //SubMenus
-            panelSubMenuHelp.BackColor = ColorsTheme.PanelSubMenu;
-            panelSubMenuTheme.BackColor = ColorsTheme.PanelSubMenu;
-
-            // Buttons Font
-            btnIntegral.ForeColor = ColorsTheme.PrimaryFont; // Methods Button
-            btnAyuda.ForeColor = ColorsTheme.PrimaryFont; // Help Button
-            btnGuia.ForeColor = ColorsTheme.PrimaryFont;
-            btnAbout.ForeColor = ColorsTheme.PrimaryFont;
-            btnTheme.ForeColor = ColorsTheme.PrimaryFont; // Theme Button
-            btnBlueTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnRedTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnGreenTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnPurpleTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnTags.ForeColor = ColorsTheme.PrimaryFont; // Tags Button
-            btnExit.ForeColor = ColorsTheme.PrimaryFont; // Exit Button
-
-            // Labels
-            lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
-
-            hideSubMenu();
-            Reset();
-        }
-
-        private void btnPurpleTheme_Click(object sender, EventArgs e)
-        {
-            currentTheme = "Purple";
-            ColorsTheme.ChooseTheme("Purple");
-
-            // Left Panel
-            panelContainerLeft.BackColor = ColorsTheme.PanelContainerLeft;
-
-            btnIntegral.BackColor = ColorsTheme.PanelContainerLeft;
-            btnAyuda.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTheme.BackColor = ColorsTheme.PanelContainerLeft;
-            btnTags.BackColor = ColorsTheme.PanelContainerLeft;
-            btnExit.BackColor = ColorsTheme.PanelContainerLeft;
-
-            // Child Form
-            panelForm.BackColor = ColorsTheme.PanelChildForm;
-
-            //SubMenus
-            panelSubMenuHelp.BackColor = ColorsTheme.PanelSubMenu;
-            panelSubMenuTheme.BackColor = ColorsTheme.PanelSubMenu;
-
-            // Buttons Font
-            btnIntegral.ForeColor = ColorsTheme.PrimaryFont; // Methods Button
-            btnAyuda.ForeColor = ColorsTheme.PrimaryFont; // Help Button
-            btnGuia.ForeColor = ColorsTheme.PrimaryFont;
-            btnAbout.ForeColor = ColorsTheme.PrimaryFont;
-            btnTheme.ForeColor = ColorsTheme.PrimaryFont; // Theme Button
-            btnBlueTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnRedTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnGreenTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnPurpleTheme.ForeColor = ColorsTheme.PrimaryFont;
-            btnTags.ForeColor = ColorsTheme.PrimaryFont; // Tags Button
-            btnExit.ForeColor = ColorsTheme.PrimaryFont; // Exit Button
-
-            // Labels
-            lblVersion.ForeColor = ColorsTheme.PanelSubMenu;
-
-            hideSubMenu();
-            Reset();
-        }
-
         private void btnTags_Click(object sender, EventArgs e)
         {
             using (Process compiler = new Process())
@@ -303,6 +131,42 @@ namespace defi_2022
                 compiler.StartInfo.FileName = "https://github.com/JohnyDeCoder/defi/tags";
                 compiler.StartInfo.UseShellExecute = true;
                 compiler.Start();
+            }
+
+            hideSubMenu();
+        }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            showSubMenu(panelSubMenuOptions);
+            activateBtn(sender);
+        }
+
+        private void btnAppearance_Click(object sender, EventArgs e)
+        {
+            if (Text != "DEFI - Opciones - Apariencia")
+            {
+                openChildForm(new DEFI_Opciones_Apariencia());
+            }
+
+            hideSubMenu();
+        }
+
+        private void btnLang_Click(object sender, EventArgs e)
+        {
+            if (Text != "DEFI - Opciones - Idioma")
+            {
+                openChildForm(new DEFI_Opciones_Idioma());
+            }
+
+            hideSubMenu();
+        }
+
+        private void btnAdvance_Click(object sender, EventArgs e)
+        {
+            if (Text != "DEFI - Opciones - Avanzado")
+            {
+                openChildForm(new DEFI_Opciones_Avanzado());
             }
 
             hideSubMenu();
@@ -320,7 +184,7 @@ namespace defi_2022
         private void customizeSubMenus()
         {
             panelSubMenuHelp.Visible = false;
-            panelSubMenuTheme.Visible = false;
+            panelSubMenuOptions.Visible = false;
         }
 
         private void hideSubMenu()
@@ -329,9 +193,9 @@ namespace defi_2022
             {
                 panelSubMenuHelp.Visible = false;
             }
-            if (panelSubMenuTheme.Visible == true)
+            if (panelSubMenuOptions.Visible == true)
             {
-                panelSubMenuTheme.Visible = false;
+                panelSubMenuOptions.Visible = false;
             }
         }
 

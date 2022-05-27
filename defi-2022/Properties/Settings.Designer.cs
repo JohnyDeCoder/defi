@@ -37,13 +37,61 @@ namespace defi_2022.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool AbleToRemove {
+        [global::System.Configuration.DefaultSettingValueAttribute("Blue")]
+        public string Theme {
             get {
-                return ((bool)(this["AbleToRemove"]));
+                return ((string)(this["Theme"]));
             }
             set {
-                this["AbleToRemove"] = value;
+                this["Theme"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public double ImageScale {
+            get {
+                return ((double)(this["ImageScale"]));
+            }
+            set {
+                this["ImageScale"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Arial")]
+        public string FontImageText {
+            get {
+                return ((string)(this["FontImageText"]));
+            }
+            set {
+                this["FontImageText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DevelopMode {
+            get {
+                return ((bool)(this["DevelopMode"]));
+            }
+            set {
+                this["DevelopMode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Spanish")]
+        public string Language {
+            get {
+                return ((string)(this["Language"]));
+            }
+            set {
+                this["Language"] = value;
             }
         }
     }

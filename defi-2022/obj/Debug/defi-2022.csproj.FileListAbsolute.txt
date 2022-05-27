@@ -33,3 +33,6 @@ D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\Git
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.csproj.CopyComplete
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.exe
 D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi-2022.pdb
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi_2022.Forms.External.DEFI_Opciones_Apariencia.resources
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi_2022.Forms.External.Options.DEFI_Opciones_Avanzado.resources
+D:\Documentos\Proyectos individuales\Programación\Sistemas tradicionales\C#\GitHub\repos\defi\defi-2022\obj\Debug\defi_2022.Forms.External.Options.DEFI_Opciones_Idioma.resources
